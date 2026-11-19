@@ -1,0 +1,47 @@
+.theme-toggle{border:1px solid #d9c5ee;background:#eee5fc;color:#54317d;padding:10px 13px;border-radius:20px;font-size:13px;white-space:nowrap}.theme-toggle:hover{background:#e3d3f7}.theme-toggle:focus-visible{outline:3px solid #a878e7;outline-offset:3px}header{gap:18px}.header-note{display:none}
+html[data-theme="dark"]{--paper:#16121f;--ink:#f0e9fb;--muted:#bdb0cf;--line:#483852;--purple:#c39afa;--cream:#34283c;color-scheme:dark}
+[data-theme="dark"] body{background:radial-gradient(ellipse at 3% 8%,#35224680,transparent 34%),#16121f}
+[data-theme="dark"] header{background:#191420;border-color:var(--line)}
+[data-theme="dark"] .theme-toggle{background:#362644;color:#f0e3ff;border-color:#71518c}
+[data-theme="dark"] .hero p,[data-theme="dark"] .theory-grid p,[data-theme="dark"] td:nth-child(2),[data-theme="dark"] .neighbor-result p,[data-theme="dark"] .neighbor-value small{color:#c7b9d4}
+[data-theme="dark"] .hero .eyebrow,[data-theme="dark"] .pill,[data-theme="dark"] .badge{background:#352544;color:#dcc3ff;border-color:#614779}
+[data-theme="dark"] .hero h1 em:after{background:#5a3543}
+[data-theme="dark"] .formula-art{box-shadow:7px 8px 0 #352441}
+[data-theme="dark"] .workspace,[data-theme="dark"] .steps-panel{background:#211a2b;border-color:var(--line)}
+[data-theme="dark"] .input-panel{background:linear-gradient(145deg,#2c2039,#261d30);border-color:var(--line)}
+[data-theme="dark"] .result-panel{background:linear-gradient(130deg,#211a2b,#2c2030)}
+[data-theme="dark"] .number-input,[data-theme="dark"] .neighbor-entry input{background:#191420;border-color:#685078;color:var(--ink)}
+[data-theme="dark"] .presets button,[data-theme="dark"] .neighbor-presets button,[data-theme="dark"] .outline{background:#30243e;color:#dfc6fa;border-color:#614779}
+[data-theme="dark"] .presets button.active,[data-theme="dark"] .presets button:hover{background:#b98ae8;color:#1b1225}
+[data-theme="dark"] .note,[data-theme="dark"] footer,[data-theme="dark"] td,[data-theme="dark"] .example-list button{border-color:var(--line)}
+[data-theme="dark"] .big-number{color:#d9b2ff;text-shadow:none}
+[data-theme="dark"] .metrics>div{background:#382849}
+[data-theme="dark"] .metrics>div:nth-child(2){background:#422a32}
+[data-theme="dark"] .metrics>div:nth-child(3){background:#3c3221}
+[data-theme="dark"] .metrics>div:nth-child(4){background:#2f2a49}
+[data-theme="dark"] .metrics strong{color:#dfbaff}
+[data-theme="dark"] .metrics>div:nth-child(2) strong{color:#ffb299}
+[data-theme="dark"] .metrics>div:nth-child(3) strong{color:#f1ce82}
+[data-theme="dark"] .verdict,[data-theme="dark"] .algorithm{background:#30233d;color:#decaee;border-color:#604473}
+[data-theme="dark"] .algorithm>span:first-child,[data-theme="dark"] #download{background:#3a284a;color:#dfbdff;border-color:#725389}
+[data-theme="dark"] .algorithm b{background:#50313a;color:#ffc1a3}
+[data-theme="dark"] .progress-track{background:#42314f}
+[data-theme="dark"] th{background:#211a2b;color:#cbb4df}
+[data-theme="dark"] tbody tr:nth-child(even){background:#281e34}
+[data-theme="dark"] tbody tr.final-row{background:#3d2b30}
+[data-theme="dark"] td:nth-child(3){color:#d7aaff}
+[data-theme="dark"] .theory-grid article{background:linear-gradient(140deg,#271d33,#32233e);border-color:var(--line)}
+[data-theme="dark"] .theory-grid .purple-card{background:linear-gradient(135deg,#57387e,#3f2a62)}
+[data-theme="dark"] .theory-grid .cream-card{background:linear-gradient(135deg,#3f3226,#402a30)}
+[data-theme="dark"] .card-icon{background:#48305c;color:#e1bbff}
+[data-theme="dark"] .cream-card .card-icon{background:#523931;color:#ffc0a1}
+[data-theme="dark"] .examples,[data-theme="dark"] .neighbors{background:linear-gradient(125deg,#2d203b,#30232b);border-color:var(--line)}
+[data-theme="dark"] .neighbor-result{background:#211929}
+[data-theme="dark"] .neighbor-value strong{color:#d5a9ff}
+[data-theme="dark"] .neighbor-value.middle strong{color:#ffa98d}
+[data-theme="dark"] .example-type{background:#4a305f;color:#e2bfff}
+[data-theme="dark"] .example-type.composite{background:#56333b;color:#ffc0a8}
+[data-theme="dark"] .example-list b{background:#44303c;color:#ffc2a0}
+[data-theme="dark"] .example-list button:hover{background:#46324e}
+[data-theme="dark"] #error,[data-theme="dark"] #neighbor-error{color:#ffa69e}
+@media(max-width:640px){header{height:auto;min-height:78px;flex-wrap:wrap;gap:12px;padding-top:14px;padding-bottom:14px}header nav{order:3;width:100%;justify-content:center}.theme-toggle{margin-left:auto;font-size:12px;padding:9px 11px}}
