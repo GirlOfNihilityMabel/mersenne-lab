@@ -1,0 +1,3 @@
+function calculate(p){const prime=n=>{if(n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true};const start=performance.now(),m=(1n<<BigInt(p))-1n,rows=[];if(!prime(p))return {p,m:String(m),rows,prime:false,reason:'exponent',ms:performance.now()-start};if(p===2)return {p,m:'3',rows,prime:true,reason:'special',ms:performance.now()-start};let s=4n;for(let i=1;i<=p-2;i++){const prev=s;s=(s*s-2n)%m;rows.push({i,prev:String(prev),s:String(s)})}return {p,m:String(m),rows,prime:s===0n,rest:String(s),ms:performance.now()-start}}
+
+onmessage=e=>{try{postMessage({result:calculate(e.data)})}catch(error){postMessage({error:error.message})}};
