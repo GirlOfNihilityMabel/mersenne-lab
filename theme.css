@@ -45,3 +45,5 @@ html[data-theme="dark"]{--paper:#16121f;--ink:#f0e9fb;--muted:#bdb0cf;--line:#48
 [data-theme="dark"] .example-list button:hover{background:#46324e}
 [data-theme="dark"] #error,[data-theme="dark"] #neighbor-error{color:#ffa69e}
 @media(max-width:640px){header{height:auto;min-height:78px;flex-wrap:wrap;gap:12px;padding-top:14px;padding-bottom:14px}header nav{order:3;width:100%;justify-content:center}.theme-toggle{margin-left:auto;font-size:12px;padding:9px 11px}}
+
+#metric-rest{display:block;max-height:160px;overflow:auto;overflow-wrap:anywhere;white-space:normal;line-height:1.5;font-variant-numeric:tabular-nums}#metric-rest:focus-visible{outline:2px solid var(--purple)}

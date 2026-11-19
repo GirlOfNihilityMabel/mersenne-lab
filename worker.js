@@ -5,7 +5,7 @@ function calculate(p, report = () => {}) {
   const compact = p > 2000, total = prime(p) && p > 2 ? p - 2 : 0;
   const rows = [], stride = Math.max(1, Math.ceil(total / 100));
   const preview = n => { if (!compact) return String(n); if (n < (1n << 120n)) return String(n); return '0x' + (n >> BigInt(Math.max(0, p - 48))).toString(16) + '…' + (n & ((1n << 48n) - 1n)).toString(16).padStart(12, '0'); };
-  const base = {p, m: compact ? `2^${p} − 1` : String(m), digits: Math.floor(p * Math.LOG10E * Math.LN2) + 1, rows, compact, total};
+  const base = {p, m: String(m), digits: Math.floor(p * Math.LOG10E * Math.LN2) + 1, rows, compact, total};
   if (!prime(p)) return {...base, prime:false, reason:'exponent', ms:performance.now()-start};
   if (p === 2) return {...base, prime:true, reason:'special', ms:performance.now()-start};
   let s = 4n, lastReport = start;
@@ -20,6 +20,6 @@ function calculate(p, report = () => {}) {
     if (!compact || i <= 12 || i % stride === 0 || i === total) rows.push({i, prev:preview(prev), s:preview(s)});
     if (i % 32 === 0) { const now = performance.now(); if (now - lastReport > 150) {report({done:i,total,ms:now-start});lastReport=now;} }
   }
-  return {...base, prime:s===0n, rest:preview(s), ms:performance.now()-start};
+  return {...base, prime:s===0n, rest:String(s), ms:performance.now()-start};
 }
 onmessage = e => { try { postMessage({result:calculate(e.data, progress => postMessage({progress}))}); } catch (error) { postMessage({error:error.message}); } };
