@@ -20,7 +20,8 @@ function calculate(p, report = () => {}, fullTest = false) {
       if (q >= m) break;
       if (q % 8n !== 1n && q % 8n !== 7n) continue;
       if (powerMod(bits, q) === 1n && m % q === 0n) {
-        return {...base, total:0, prime:false, reason:'factor', factor:String(q), divisionRest:'0', ms:performance.now()-start};
+        report({factor:String(q)});
+        break;
       }
     }
   }

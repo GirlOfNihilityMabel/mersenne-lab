@@ -14,9 +14,9 @@ function run(fullTest=false){
  $('metric-p').textContent=p;$('metric-digits').textContent=Math.floor(p*Math.LOG10E*Math.LN2)+1;$('metric-steps').textContent='—';$('metric-rest').textContent='—';$('metric-rest-label').textContent='ФИНАЛЬНЫЙ ОСТАТОК ЛЮКА–ЛЕМЕРА';$('step-count').textContent='Подготовка расчёта…';$('progress').style.width='0%';$('badge').textContent='Идёт расчёт';$('number').textContent=`2^${p} − 1`;$('rows').replaceChildren();
  $('verdict').textContent='Вычисления идут в фоне. Можно продолжать пользоваться сайтом или отменить расчёт.';
  for(const id of ['play','next','all','download'])$(id).disabled=true;
- const current=new Worker('worker.js?v=exact-factor-1');worker=current;
+ const current=new Worker('worker.js?v=iterations-1');worker=current;
  current.onmessage=e=>{if(worker!==current)return;const data=e.data;
- if(data.progress){const {done,total,ms}=data.progress;$('timing').textContent=`${(100*done/total).toFixed(1)}% · ${(ms/1000).toFixed(1)} с`;$('progress').style.width=(100*done/total)+'%';$('step-count').textContent=`Вычислено ${done} из ${total} итераций`;return}
+ if(data.progress){if(data.progress.factor){$('verdict').textContent=`Найден делитель ${data.progress.factor}: составность уже доказана. Продолжаем полный тест Люка–Лемера для получения итераций и финального остатка.`;return}const {done,total,ms}=data.progress;$('timing').textContent=`${(100*done/total).toFixed(1)}% · ${(ms/1000).toFixed(1)} с`;$('progress').style.width=(100*done/total)+'%';$('step-count').textContent=`Вычислено ${done} из ${total} итераций`;return}
  current.terminate();worker=null;idle();
  if(data.error){$('error').textContent=data.error;$('result-heading').textContent='Расчёт не завершён';$('badge').textContent='Ошибка';return}
  result=data.result;$('download').disabled=false;render();};
