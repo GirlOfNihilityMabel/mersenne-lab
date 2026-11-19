@@ -45,3 +45,5 @@ header{box-shadow:0 8px 25px #24203903}nav a:hover{color:var(--purple)}.logo{box
 [data-theme="dark"] .examples{background:radial-gradient(ellipse at 100% 0,#78539f20,transparent 75%),var(--surface-soft)}
 .outline:hover,.neighbor-presets button:hover{box-shadow:0 3px 10px #5d3d870a}.example-list button{border-radius:9px}.example-list b{border:1px solid var(--line);transition:transform .2s}.example-list button:hover b{transform:rotate(8deg)}
 @media(prefers-reduced-motion:reduce){.number-input,.theory-grid article,.example-list b{transition:none}}
+
+@media(max-width:760px){.chip-two{display:none}}
