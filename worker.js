@@ -25,6 +25,7 @@ function parseInteger(value,min=2n){const text=String(value).trim();if(!/^\d+$/.
 function calculate(value, report=()=>{}, fullTest=false) {
  const pBig=parseInteger(value),start=performance.now();
  if(pBig>BigInt(Number.MAX_SAFE_INTEGER))throw Error('Такой показатель превышает точность счётчика итераций браузера. Введите меньший показатель; результат не был вычислен.');
+ fullTest = fullTest || pBig <= 100000n;
  const p=Number(pBig),exponentPrime=exactPrime(pBig,report),compact=p>2000;
  const base={p,rows:[],total:0,compact,digits:Math.floor(p*Math.LOG10E*Math.LN2)+1,method:'ll',ms:0};
  let m;try{m=(1n<<pBig)-1n;}catch{throw Error('Браузеру не хватает ресурсов для создания этого числа. Расчёт не выполнен.');}
